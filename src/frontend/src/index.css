@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Dark orange-black portfolio theme */
+    --background: 0.09 0 0;
+    --foreground: 0.95 0 0;
+    --card: 0.16 0 0;
+    --card-foreground: 0.95 0 0;
+    --popover: 0.19 0 0;
+    --popover-foreground: 0.95 0 0;
+    --primary: 0.63 0.19 42;
+    --primary-foreground: 0.09 0 0;
+    --secondary: 0.19 0 0;
+    --secondary-foreground: 0.95 0 0;
+    --muted: 0.16 0 0;
+    --muted-foreground: 0.74 0 0;
+    --accent: 0.63 0.19 42;
+    --accent-foreground: 0.09 0 0;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.22 0 0;
+    --input: 0.19 0 0;
+    --ring: 0.63 0.19 42;
+
+    --orange: 0.63 0.19 42;
+    --orange-glow: 0.68 0.17 50;
+
+    --chart-1: 0.63 0.19 42;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+
+    --sidebar: 0.12 0 0;
+    --sidebar-foreground: 0.95 0 0;
+    --sidebar-primary: 0.63 0.19 42;
+    --sidebar-primary-foreground: 0.09 0 0;
+    --sidebar-accent: 0.19 0 0;
+    --sidebar-accent-foreground: 0.95 0 0;
+    --sidebar-border: 0.22 0 0;
+    --sidebar-ring: 0.63 0.19 42;
+  }
+
+  .dark {
+    --background: 0.09 0 0;
+    --foreground: 0.95 0 0;
+    --card: 0.16 0 0;
+    --card-foreground: 0.95 0 0;
+    --popover: 0.19 0 0;
+    --popover-foreground: 0.95 0 0;
+    --primary: 0.63 0.19 42;
+    --primary-foreground: 0.09 0 0;
+    --secondary: 0.19 0 0;
+    --secondary-foreground: 0.95 0 0;
+    --muted: 0.16 0 0;
+    --muted-foreground: 0.74 0 0;
+    --accent: 0.63 0.19 42;
+    --accent-foreground: 0.09 0 0;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.22 0 0;
+    --input: 0.19 0 0;
+    --ring: 0.63 0.19 42;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  ::selection {
+    background-color: oklch(0.63 0.19 42 / 0.4);
+    color: oklch(0.95 0 0);
+  }
+}
+
+@layer utilities {
+  .text-orange {
+    color: oklch(var(--orange));
+  }
+  .bg-orange {
+    background-color: oklch(var(--orange));
+  }
+  .border-orange {
+    border-color: oklch(var(--orange));
+  }
+  .glow-orange {
+    box-shadow: 0 0 60px oklch(0.63 0.19 42 / 0.35), 0 0 20px
+      oklch(0.63 0.19 42 / 0.2);
+  }
+  .glow-orange-sm {
+    box-shadow: 0 0 20px oklch(0.63 0.19 42 / 0.25);
+  }
+  .section-title {
+    @apply text-3xl font-extrabold uppercase tracking-widest text-center text-foreground;
+  }
+  .section-title-accent {
+    @apply block w-12 h-1 bg-orange mx-auto mt-3 mb-10 rounded-full;
+  }
+}
